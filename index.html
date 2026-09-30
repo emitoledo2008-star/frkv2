@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FRK Integrativa | Consultorio, Botica Natural & Cursos</title>
-  <meta name="description" content="Consultorio médico integrativo, venta de aminoácidos, extractos herbolarios, miel orgánica pura, flores de bach y cursos de alimentación consciente." />
+  <title>FRK Integrativa | Jorge Reskala — Consultorio, Botica & Curso Online</title>
+  <meta name="description" content="FRK Integrativa con Jorge Reskala en Polanco, CDMX. Curso Online 'De la Alimentación a la Sanación', consultas, aminoácidos, extractos herbolarios, miel orgánica y flores de Bach." />
   
-  <!-- Google Fonts: Plus Jakarta Sans + Playfair Display para contraste editorial -->
+  <!-- Google Fonts: Plus Jakarta Sans + Playfair Display + Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,12 +24,24 @@
               200: '#BFE5C8',
               300: '#92D1A1',
               400: '#64B877',
-              500: '#52A765', // Verde Logo
+              500: '#52A765', // Verde Logo FRK
               600: '#3D8E50',
               700: '#337142',
               800: '#2C5B37',
               900: '#1D3B24',
               dark: '#16221A',
+            },
+            earth: {
+              50: '#FAF6F0',
+              100: '#F3E9D2', // Crema cálido del PDF
+              200: '#E5D2B0',
+              300: '#D2B183',
+              400: '#BC8E5B',
+              500: '#9C6B43', // Terracota / Bronce del PDF
+              600: '#835432',
+              700: '#694227',
+              800: '#543420',
+              900: '#3E2617',
             },
             honey: {
               50: '#FFFBEB',
@@ -48,13 +60,6 @@
               500: '#A855F7',
               600: '#9333EA',
               700: '#7E22CE',
-            },
-            botanical: {
-              50: '#F0FDFA',
-              100: '#CCFBF1',
-              500: '#14B8A6',
-              600: '#0D9488',
-              700: '#0F766E',
             }
           },
           fontFamily: {
@@ -71,7 +76,6 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Efectos de cristal y gradientes vivos */
     .glass-nav {
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
@@ -79,10 +83,9 @@
     }
     
     .hero-gradient {
-      background: radial-gradient(circle at 12% 18%, rgba(222, 242, 226, 0.85) 0%, rgba(255, 255, 255, 0.94) 50%, rgba(254, 243, 199, 0.65) 100%);
+      background: radial-gradient(circle at 12% 18%, rgba(222, 242, 226, 0.82) 0%, rgba(250, 246, 240, 0.94) 52%, rgba(243, 233, 210, 0.70) 100%);
     }
 
-    /* Brillo y animación de tarjetas */
     .product-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
@@ -92,15 +95,21 @@
       box-shadow: 0 20px 35px -10px rgba(50, 113, 66, 0.16);
     }
 
-    .service-card {
-      transition: all 0.35s ease;
+    .module-card {
+      transition: all 0.3s ease;
     }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 30px -8px rgba(30, 59, 36, 0.12);
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 26px -8px rgba(156, 107, 67, 0.18);
     }
 
-    /* Pulso interactivo de WhatsApp */
+    .pricing-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+    }
+
     @keyframes pulse-ring {
       0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(82, 167, 101, 0.6); }
       70% { transform: scale(1.05); box-shadow: 0 0 0 16px rgba(82, 167, 101, 0); }
@@ -110,7 +119,6 @@
       animation: pulse-ring 2.8s infinite ease-in-out;
     }
 
-    /* Efecto shimmer brillante para botones */
     @keyframes shimmer-sweep {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
@@ -123,7 +131,7 @@
     }
 
     /* ========================================================================= */
-    /* OBJETOS EN MOVIMIENTO CONTINUO Y FLUIDO (CON MÁS COLOR Y VIDA)             */
+    /* OBJETOS EN MOVIMIENTO CONTINUO Y FLUIDO POR TODA LA PÁGINA               */
     /* ========================================================================= */
     .ambient-container {
       position: fixed;
@@ -157,8 +165,8 @@
     }
 
     @keyframes pulse-aurora {
-      0%, 100% { transform: scale(1); opacity: 0.30; }
-      50% { transform: scale(1.22); opacity: 0.45; }
+      0%, 100% { transform: scale(1); opacity: 0.28; }
+      50% { transform: scale(1.22); opacity: 0.42; }
     }
 
     .float-item-1 { animation: float-gentle-1 20s infinite ease-in-out; }
@@ -166,7 +174,6 @@
     .float-item-3 { animation: float-gentle-3 32s infinite ease-in-out; }
     .pulse-aurora-glow { animation: pulse-aurora 12s infinite ease-in-out; }
 
-    /* Barra de scroll estilizada */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #F3F7F4; }
     ::-webkit-scrollbar-thumb { background: #8FD19C; border-radius: 4px; }
@@ -179,13 +186,12 @@
   <!-- CAPA DE FONDO: OBJETOS EN MOVIMIENTO CONTINUO Y COLORIDO                  -->
   <!-- ========================================================================= -->
   <div class="ambient-container" aria-hidden="true">
-    <!-- Orbes de color con respiración suave -->
     <div class="absolute -top-12 -left-12 w-[420px] h-[420px] bg-gradient-to-tr from-brand-300/40 to-emerald-200/40 rounded-full blur-3xl pulse-aurora-glow"></div>
-    <div class="absolute top-[28%] -right-16 w-[480px] h-[480px] bg-gradient-to-bl from-honey-300/35 to-amber-200/35 rounded-full blur-3xl pulse-aurora-glow" style="animation-delay: -4s;"></div>
+    <div class="absolute top-[28%] -right-16 w-[480px] h-[480px] bg-gradient-to-bl from-earth-200/45 to-amber-200/35 rounded-full blur-3xl pulse-aurora-glow" style="animation-delay: -4s;"></div>
     <div class="absolute top-[58%] -left-20 w-[460px] h-[460px] bg-gradient-to-tr from-floral-200/35 to-brand-200/35 rounded-full blur-3xl pulse-aurora-glow" style="animation-delay: -8s;"></div>
-    <div class="absolute bottom-10 right-10 w-[420px] h-[420px] bg-gradient-to-tl from-botanical-200/35 to-brand-300/35 rounded-full blur-3xl pulse-aurora-glow" style="animation-delay: -12s;"></div>
+    <div class="absolute bottom-10 right-10 w-[420px] h-[420px] bg-gradient-to-tl from-earth-100/50 to-brand-300/35 rounded-full blur-3xl pulse-aurora-glow" style="animation-delay: -12s;"></div>
 
-    <!-- Objeto 1: Hoja botánica verde en movimiento suave -->
+    <!-- Hoja botánica verde -->
     <div class="absolute top-[16%] left-[7%] float-item-1 text-brand-600/40">
       <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
@@ -193,7 +199,7 @@
       </svg>
     </div>
 
-    <!-- Objeto 2: Círculo zen del logotipo en color verde radiante -->
+    <!-- Círculo zen del logotipo -->
     <div class="absolute top-[30%] right-[8%] float-item-2 text-brand-500/35">
       <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none">
         <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="2.8" stroke-dasharray="8 8" />
@@ -201,14 +207,14 @@
       </svg>
     </div>
 
-    <!-- Objeto 3: Gota de extracto / miel ámbar dorada -->
-    <div class="absolute top-[48%] left-[5%] float-item-3 text-honey-500/45">
+    <!-- Gota de extracto / miel ámbar -->
+    <div class="absolute top-[48%] left-[5%] float-item-3 text-earth-500/45">
       <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
       </svg>
     </div>
 
-    <!-- Objeto 4: Flor de Bach / pétalo violeta -->
+    <!-- Flor de Bach / pétalo -->
     <div class="absolute top-[64%] right-[6%] float-item-1 text-floral-500/40" style="animation-delay: -5s;">
       <svg class="w-14 h-14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
         <circle cx="12" cy="12" r="3"/>
@@ -219,7 +225,7 @@
       </svg>
     </div>
 
-    <!-- Objeto 5: Estructura molecular de aminoácido en verde esmeralda -->
+    <!-- Molécula celular -->
     <div class="absolute top-[78%] left-[10%] float-item-2 text-emerald-600/35" style="animation-delay: -10s;">
       <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
         <circle cx="12" cy="12" r="3.5"/>
@@ -229,51 +235,55 @@
         <line x1="15" y1="13.5" x2="20.5" y2="16.5"/>
       </svg>
     </div>
-
-    <!-- Objeto 6: Chispa botánica dorada flotante -->
-    <div class="absolute top-[40%] right-[20%] float-item-3 text-honey-400/40" style="animation-delay: -14s;">
-      <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/>
-      </svg>
-    </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- BARRA SUPERIOR INFORMATIVA: HORARIOS Y CONTACTO DIRECTO                  -->
+  <!-- BARRA SUPERIOR INFORMATIVA: HORARIOS, POLANCO CDMX Y TELÉFONOS            -->
   <!-- ========================================================================= -->
-  <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-brand-900 text-white text-xs py-2 px-4 border-b border-brand-700/60 sticky top-0 z-50 transition-all duration-300 shadow-sm">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-      <!-- Horario y Estado en Vivo -->
-      <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+  <div class="bg-gradient-to-r from-brand-900 via-earth-800 to-brand-900 text-white text-xs py-2 px-4 border-b border-brand-700/60 sticky top-0 z-50 transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2">
+      <!-- Horario y Ubicación -->
+      <div class="flex items-center gap-3 flex-wrap justify-center lg:justify-start">
         <span class="inline-flex items-center gap-1.5 bg-brand-700/80 px-2.5 py-0.5 rounded-full text-[11px] font-medium tracking-wide border border-brand-500/40">
           <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <span id="live-status-text">Verificando horario...</span>
         </span>
         <span class="hidden sm:inline text-brand-300">|</span>
-        <span class="text-brand-100 flex items-center gap-1.5">
+        <span class="text-brand-100 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-honey-400"></i>
+          <strong>Polanco, CDMX</strong>
+        </span>
+        <span class="hidden md:inline text-brand-300">|</span>
+        <span class="text-brand-100 hidden md:flex items-center gap-1">
           <i data-lucide="clock" class="w-3.5 h-3.5 text-honey-400"></i>
-          <strong>Horarios:</strong> Lun-Vie 10:00 a 18:00 hrs | Sáb 10:00 a 14:00 hrs
+          Lun-Vie 10:00 a 18:00 | Sáb 10:00 a 14:00
         </span>
       </div>
 
-      <!-- Teléfono de WhatsApp -->
-      <div class="flex items-center gap-4 text-brand-100">
-        <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola! Me comunico desde la página web de FRK Integrativa.')" class="flex items-center gap-1.5 hover:text-white transition bg-brand-800/60 hover:bg-brand-700 px-3 py-0.5 rounded-full border border-brand-600/40">
-          <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span class="hidden sm:inline">WhatsApp Consultorio:</span>
-          <span class="font-bold text-white tracking-wide">55 7471 4726</span>
+      <!-- Teléfonos Oficiales y WhatsApp -->
+      <div class="flex items-center gap-3 flex-wrap justify-center text-brand-100">
+        <span class="hidden xl:inline text-[11px] text-earth-200">
+          Tels: <strong>(55) 6078 3600</strong> &bull; <strong>(55) 4536 6504</strong>
+        </span>
+        <a href="mailto:rkintegrativa@gmail.com" class="hidden sm:inline-flex items-center gap-1 text-[11px] hover:text-white transition">
+          <i data-lucide="mail" class="w-3 h-3 text-honey-300"></i>
+          rkintegrativa@gmail.com
+        </a>
+        <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me comunico desde la página web oficial.')" class="flex items-center gap-1.5 hover:text-white transition bg-emerald-700/80 hover:bg-emerald-600 px-3 py-0.5 rounded-full border border-emerald-500/40">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-300"></i>
+          <span class="font-bold text-white tracking-wide">WA: 55 7471 4726</span>
         </a>
       </div>
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- BARRA DE NAVEGACIÓN PRINCIPAL (HEADER CON LOGOTIPO)                      -->
+  <!-- BARRA DE NAVEGACIÓN PRINCIPAL (HEADER)                                   -->
   <!-- ========================================================================= -->
   <header class="glass-nav border-b border-gray-200/80 sticky top-[37px] z-40 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
       
-      <!-- Logotipo de la Clínica -->
+      <!-- Logotipo FRK Integrativa -->
       <a href="#inicio" class="flex items-center gap-3 group">
         <div class="h-14 flex items-center">
           <img 
@@ -289,51 +299,48 @@
         </div>
       </a>
 
-      <!-- Menú de Navegación con tipografía limpia -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-600">
+      <!-- Menú de Navegación -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-600">
         <a href="#inicio" class="hover:text-brand-600 transition-colors">Inicio</a>
-        <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios & Citas</a>
+        <a href="#curso-online" class="text-earth-600 hover:text-earth-700 font-bold flex items-center gap-1 transition-colors">
+          <i data-lucide="Flame" class="w-4 h-4 text-earth-500"></i>
+          <span>Curso “De la Alimentación a la Sanación”</span>
+        </a>
+        <a href="#servicios" class="hover:text-brand-600 transition-colors">Consultorio</a>
         <a href="#catalogo" class="hover:text-brand-600 transition-colors flex items-center gap-1.5">
-          <span>Catálogo de Productos</span>
+          <span>Catálogo Botica</span>
           <span class="bg-brand-100 text-brand-700 text-[11px] font-bold px-2 py-0.5 rounded-full border border-brand-200">35</span>
         </a>
-        <a href="#cursos" class="hover:text-brand-600 transition-colors">Cursos de Alimentación</a>
-        <a href="#contacto" class="hover:text-brand-600 transition-colors">Horarios & Ubicación</a>
+        <a href="#contacto" class="hover:text-brand-600 transition-colors">Contacto</a>
       </nav>
 
-      <!-- Botones de Acción: Cita Directa y Carrito -->
+      <!-- Botones de Acción -->
       <div class="flex items-center gap-3">
-        <!-- Botón Lista / Carrito -->
-        <button onclick="toggleCartDrawer(true)" class="relative p-2.5 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-full transition-all duration-200" title="Ver mi lista de consulta">
+        <button onclick="toggleCartDrawer(true)" class="relative p-2.5 text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-full transition-all duration-200" title="Ver mi lista de pedido">
           <i data-lucide="shopping-bag" class="w-6 h-6"></i>
           <span id="cart-badge-count" class="absolute -top-1 -right-1 bg-brand-600 text-white text-[11px] font-bold h-5 min-w-[20px] px-1 rounded-full flex items-center justify-center shadow-sm">0</span>
         </button>
 
-        <!-- Botón Agendar Cita WhatsApp -->
-        <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio')" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 via-emerald-600 to-brand-500 hover:from-brand-700 hover:to-emerald-700 text-white px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 shimmer-btn">
+        <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio Polanco')" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 via-emerald-600 to-brand-500 hover:from-brand-700 hover:to-emerald-700 text-white px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 shimmer-btn">
           <i data-lucide="calendar" class="w-4 h-4"></i>
-          <span>Agendar Cita en WhatsApp</span>
+          <span>Agendar Cita</span>
         </a>
 
-        <!-- Botón Móvil Menú Hamburguesa -->
         <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-600 hover:text-gray-900 rounded-lg">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
 
-    <!-- Menú Desplegable Móvil -->
+    <!-- Menú Móvil -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
       <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Inicio</a>
-      <a href="#servicios" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Servicios & Citas</a>
-      <a href="#catalogo" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600 flex items-center justify-between">
-        <span>Catálogo de Productos</span>
-        <span class="bg-brand-100 text-brand-700 text-xs px-2 py-0.5 rounded-full font-bold">35 productos</span>
-      </a>
-      <a href="#cursos" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Cursos de Alimentación</a>
-      <a href="#contacto" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Horarios & Ubicación</a>
+      <a href="#curso-online" onclick="toggleMobileMenu()" class="block py-2 text-base font-bold text-earth-600">Curso: “De la Alimentación a la Sanación”</a>
+      <a href="#servicios" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Consultas & Servicios</a>
+      <a href="#catalogo" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Catálogo de Productos (35)</a>
+      <a href="#contacto" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-600">Contacto</a>
       <div class="pt-2">
-        <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio')" class="w-full flex items-center justify-center gap-2 bg-brand-600 text-white py-3 rounded-xl font-bold shadow">
+        <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio Polanco')" class="w-full flex items-center justify-center gap-2 bg-brand-600 text-white py-3 rounded-xl font-bold shadow">
           <i data-lucide="message-circle" class="w-5 h-5"></i>
           <span>Agendar Cita por WhatsApp</span>
         </a>
@@ -342,120 +349,112 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- HERO SECTION CON TIPOGRAFÍA EDITORIAL (PLAYFAIR + SANS) Y MÁS COLOR       -->
+  <!-- HERO SECTION: JORGE RESKALA & FRK INTEGRATIVA                             -->
   <!-- ========================================================================= -->
-  <section id="inicio" class="hero-gradient relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden z-10">
+  <section id="inicio" class="hero-gradient relative pt-12 pb-20 lg:pt-16 lg:pb-24 overflow-hidden z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Texto Principal con tipografía serif elegante -->
+        <!-- Columna Izquierda: Propuesta de Valor -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 bg-white/90 border border-brand-200/90 px-4 py-1.5 rounded-full text-brand-700 text-xs font-bold shadow-sm">
-            <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse"></span>
-            Consultorio Médico Integrativo & Botica Natural
+          <div class="inline-flex items-center gap-2 bg-white/95 border border-earth-300 px-4 py-1.5 rounded-full text-earth-700 text-xs font-bold shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-earth-500 animate-pulse"></span>
+            FRK INTEGRATIVA &bull; JORGE RESKALA &bull; POLANCO, CDMX
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.18] font-display">
-            Restaura tu <span class="font-serif italic font-normal text-brand-600 underline decoration-brand-200 decoration-wavy decoration-2">equilibrio natural</span> con ciencia médica y botánica
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-[1.16] font-display">
+            Un enfoque integrativo para transformar tu <span class="font-serif italic font-normal text-brand-600 underline decoration-earth-300 decoration-wavy decoration-2">salud desde la raíz</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Atención clínica en consultorio para el cuidado de tu salud. Botica con <strong>aminoácidos</strong>, <strong>extractos herbolarios</strong>, <strong>miel orgánica</strong>, <strong>flores de bach</strong> y <strong>cursos de alimentación consciente</strong>.
+          <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Consultorio en <strong>Polanco, CDMX</strong> encabezado por <strong>Jorge Reskala</strong>. Descubre el nuevo Curso Online <em>“De la Alimentación a la Sanación”</em> y nuestra botica de aminoácidos, extractos herbolarios, miel orgánica y flores de Bach.
           </p>
 
-          <!-- Botones de Acción Principales -->
+          <!-- Botones de Acción -->
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio')" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 via-brand-600 to-emerald-700 hover:from-emerald-700 hover:to-brand-700 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 shimmer-btn">
-              <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
-              <span>Agendar Cita en WhatsApp</span>
+            <a href="#curso-online" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-earth-500 via-earth-600 to-earth-700 hover:from-earth-600 hover:to-earth-800 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 shimmer-btn">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              <span>Ver Curso “De la Alimentación a la Sanación”</span>
             </a>
-            <a href="#catalogo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-brand-50 text-gray-800 border border-gray-200 hover:border-brand-300 px-7 py-4 rounded-full font-bold text-base shadow-sm hover:shadow transition-all">
-              <i data-lucide="package" class="w-5 h-5 text-brand-600"></i>
-              <span>Explorar Catálogo</span>
+            <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio Polanco')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-4 rounded-full font-bold text-base shadow-md hover:shadow-lg transition-all">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Agendar Consulta en WhatsApp</span>
             </a>
           </div>
 
-          <!-- Píldoras de Categorías con Colores Vibrantes -->
+          <!-- Pilares Destacados -->
           <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-gray-200/80 text-left">
-            <div class="p-3.5 bg-gradient-to-br from-white to-emerald-50/70 rounded-2xl border border-emerald-200/80 shadow-xs">
-              <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center mb-1.5">
-                <i data-lucide="dna" class="w-4 h-4"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-900 block">Aminoácidos</span>
-              <span class="text-[11px] text-emerald-700 font-medium">Nutrición Celular</span>
+            <div class="p-3.5 bg-white/85 rounded-2xl border border-earth-200 shadow-xs">
+              <span class="text-xs font-bold text-earth-700 block">Curso 8 Módulos</span>
+              <span class="text-[11px] text-gray-600">Por Jorge Reskala</span>
             </div>
-
-            <div class="p-3.5 bg-gradient-to-br from-white to-teal-50/70 rounded-2xl border border-teal-200/80 shadow-xs">
-              <div class="w-7 h-7 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center mb-1.5">
-                <i data-lucide="leaf" class="w-4 h-4"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-900 block">Extractos</span>
-              <span class="text-[11px] text-teal-700 font-medium">Herbolaria Pura</span>
+            <div class="p-3.5 bg-white/85 rounded-2xl border border-emerald-200 shadow-xs">
+              <span class="text-xs font-bold text-emerald-800 block">Aminoácidos</span>
+              <span class="text-[11px] text-gray-600">Nutrición Celular</span>
             </div>
-
-            <div class="p-3.5 bg-gradient-to-br from-white to-amber-50/70 rounded-2xl border border-amber-200/80 shadow-xs">
-              <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center mb-1.5">
-                <i data-lucide="droplet" class="w-4 h-4"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-900 block">Miel Orgánica</span>
-              <span class="text-[11px] text-amber-700 font-medium">Cruda de Bosque</span>
+            <div class="p-3.5 bg-white/85 rounded-2xl border border-teal-200 shadow-xs">
+              <span class="text-xs font-bold text-teal-800 block">Herbolaria</span>
+              <span class="text-[11px] text-gray-600">Funcional & Espagiria</span>
             </div>
-
-            <div class="p-3.5 bg-gradient-to-br from-white to-purple-50/70 rounded-2xl border border-purple-200/80 shadow-xs">
-              <div class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center mb-1.5">
-                <i data-lucide="flower-2" class="w-4 h-4"></i>
-              </div>
-              <span class="text-xs font-bold text-gray-900 block">Flores de Bach</span>
-              <span class="text-[11px] text-purple-700 font-medium">& Cursos</span>
+            <div class="p-3.5 bg-white/85 rounded-2xl border border-amber-200 shadow-xs">
+              <span class="text-xs font-bold text-amber-800 block">Polanco CDMX</span>
+              <span class="text-[11px] text-gray-600">Consultorio & Botica</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Tarjeta Informativa del Consultorio con acentos vivos -->
+        <!-- Columna Derecha: Tarjeta Destacada del Curso y Consultorio -->
         <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md bg-white/95 backdrop-blur-md p-7 sm:p-8 rounded-3xl shadow-xl border border-brand-100 space-y-6">
+          <div class="relative mx-auto max-w-md bg-gradient-to-b from-earth-500 to-earth-700 text-white p-7 sm:p-8 rounded-3xl shadow-2xl border border-earth-400 space-y-6">
             
-            <div class="flex items-center justify-between pb-4 border-b border-gray-100">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-100 to-emerald-200 text-brand-700 flex items-center justify-center shadow-xs">
-                  <i data-lucide="calendar-check" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h3 class="text-base font-bold text-gray-900 font-display">Agenda tu Consulta</h3>
-                  <p class="text-xs text-gray-500">Consultorio FRK Integrativa</p>
-                </div>
+            <div class="flex items-center justify-between pb-4 border-b border-earth-400/50">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-earth-100 block">FRK INTEGRATIVA</span>
+                <h3 class="text-xl font-bold font-display text-white mt-0.5">Jorge Reskala</h3>
               </div>
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                WhatsApp Directo
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-earth-100 text-earth-800 shadow-xs">
+                Curso Online
               </span>
             </div>
 
-            <div class="space-y-3 text-xs">
-              <div class="p-3 rounded-xl bg-gradient-to-r from-brand-50/60 to-emerald-50/60 border border-brand-100 flex items-center justify-between">
-                <span class="font-semibold text-gray-800">Citas Médicas:</span>
-                <span class="font-bold text-brand-700">Agenda previa por WhatsApp</span>
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-earth-100 uppercase tracking-wider">Curso Online Oficial</span>
+              <h4 class="text-2xl sm:text-3xl font-serif italic font-normal text-white leading-snug">
+                “De la Alimentación a la Sanación”
+              </h4>
+              <p class="text-xs text-earth-100 leading-relaxed pt-1">
+                Un recorrido integral por 8 módulos especializados: microbiota, agua y energía celular, desintoxicación, aminoácidos esenciales, herbolaria funcional, espagiria y probióticos.
+              </p>
+            </div>
+
+            <div class="bg-earth-800/60 p-4 rounded-2xl border border-earth-400/30 space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="text-earth-100">Curso Completo (8 Módulos):</span>
+                <strong class="text-white text-sm">$8,000 MXN <span class="text-[10px] text-emerald-300">(-15% transf.)</span></strong>
               </div>
-              <div class="p-3 rounded-xl bg-gradient-to-r from-amber-50/60 to-honey-50/60 border border-amber-100 flex items-center justify-between">
-                <span class="font-semibold text-gray-800">Catálogo Natural:</span>
-                <span class="font-bold text-amber-800">35 productos disponibles</span>
+              <div class="flex justify-between items-center">
+                <span class="text-earth-100">Curso 4 Módulos:</span>
+                <strong class="text-white text-sm">$4,000 MXN <span class="text-[10px] text-emerald-300">(-10% transf.)</span></strong>
               </div>
-              <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between">
-                <span class="font-semibold text-gray-800">Lunes a Viernes:</span>
-                <span class="font-bold text-gray-900">10:00 a 18:00 hrs</span>
-              </div>
-              <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between">
-                <span class="font-semibold text-gray-800">Sábados:</span>
-                <span class="font-bold text-gray-900">10:00 a 14:00 hrs</span>
+              <div class="flex justify-between items-center">
+                <span class="text-earth-100">Curso 1 Módulo:</span>
+                <strong class="text-white text-sm">$920 MXN</strong>
               </div>
             </div>
 
-            <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta General en Consultorio')" class="w-full flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-600 to-brand-600 hover:from-emerald-700 hover:to-brand-700 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition transform hover:scale-[1.02]">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>Agendar por WhatsApp (55 7471 4726)</span>
-            </a>
+            <div class="flex flex-col gap-2.5 pt-1">
+              <a href="#curso-online" class="w-full flex items-center justify-center gap-2 bg-earth-100 hover:bg-white text-earth-900 py-3.5 rounded-xl font-bold text-sm shadow-md transition">
+                <i data-lucide="book-open" class="w-4 h-4 text-earth-700"></i>
+                <span>Ver los 8 Módulos y Precios</span>
+              </a>
+              <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola! Me interesa inscribirme o recibir información sobre el Curso Online “De la Alimentación a la Sanación” de Jorge Reskala.')" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold text-xs shadow transition">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Inscribirme o Consultar por WhatsApp</span>
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -464,156 +463,494 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- SECCIÓN 1: SERVICIOS Y CITAS (ESTILO EDITORIAL Y PROFESIONAL)              -->
+  <!-- SECCIÓN INSIGNIA DEL PDF: CURSO ONLINE "DE LA ALIMENTACIÓN A LA SANACIÓN" -->
   <!-- ========================================================================= -->
-  <section id="servicios" class="py-16 bg-white border-y border-gray-100 relative z-10">
+  <section id="curso-online" class="py-20 bg-[#F3E9D2]/65 border-y border-earth-200 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Encabezado y Presentación del Curso -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 bg-earth-500 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-xs">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          Impartido por Jorge Reskala &bull; FRK Integrativa
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-display leading-tight">
+          Curso Online <br />
+          <span class="font-serif italic font-normal text-earth-600">“De la Alimentación a la Sanación”</span>
+        </h2>
+        <p class="text-sm sm:text-base text-gray-700 font-medium tracking-wide uppercase">
+          Un enfoque integrativo para transformar tu salud desde la raíz
+        </p>
+      </div>
+
+      <!-- Los 8 Módulos del Curso (Extraídos fielmente del PDF) -->
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-earth-300/80 pb-3">
+          <h3 class="text-2xl font-bold text-gray-900 font-display flex items-center gap-2">
+            <i data-lucide="layers" class="w-6 h-6 text-earth-600"></i>
+            <span>Temario Oficial: Curso de 8 Módulos</span>
+          </h3>
+          <span class="text-xs font-bold text-earth-700 bg-white/80 px-3 py-1 rounded-full border border-earth-200">
+            Disponibles en paquete completo, 4 módulos o individual
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Módulo 1 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-earth-100 text-earth-800">Módulo 01</span>
+                <i data-lucide="sparkles" class="w-4 h-4 text-earth-500"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Una causa, muchos efectos
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Comprende el origen biológico común detrás de múltiples manifestaciones clínicas y desequilibrios del organismo.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 1: Una causa, muchos efectos del curso de Jorge Reskala.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 2 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Módulo 02</span>
+                <i data-lucide="activity" class="w-4 h-4 text-emerald-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Microbiota, intestino y enfermedad crónica
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                El papel central del ecosistema intestinal y la permeabilidad en el desarrollo y reversión de patologías crónicas.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 2: Microbiota, intestino y enfermedad crónica.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 3 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">Módulo 03</span>
+                <i data-lucide="flame" class="w-4 h-4 text-amber-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Lácteos, moco y citoquinas
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Relación entre proteínas lácteas, producción de mucosidad, cascadas inflamatorias y respuesta inmune mediada por citoquinas.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 3: Lácteos, moco y citoquinas.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 4 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800">Módulo 04</span>
+                <i data-lucide="droplets" class="w-4 h-4 text-sky-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Agua, sales, pH y energía celular
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Hidratación intracelular real, equilibrio electrolítico, terreno biológico ácido-base y potencial bioeléctrico mitocondrial.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 4: Agua, sales, pH y energía celular.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 5 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800">Módulo 05</span>
+                <i data-lucide="refresh-cw" class="w-4 h-4 text-teal-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Desintoxicación y crisis curativa
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Fases de drenaje hepático, renal y linfático, y cómo acompañar adecuadamente los procesos de depuración profunda.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 5: Desintoxicación y crisis curativa.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 6 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Módulo 06</span>
+                <i data-lucide="dna" class="w-4 h-4 text-emerald-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Aminoácidos esenciales y nutrición celular
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Los bloques estructurales de la vida: síntesis proteica, neurotransmisores y restauración ortomolecular.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 6: Aminoácidos esenciales y nutrición celular.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 7 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">Módulo 07</span>
+                <i data-lucide="leaf" class="w-4 h-4 text-amber-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Herbolaria funcional y espagiria
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Uso clínico de extractos botánicos activos y principios alquímicos de la espagiria tradicional para la salud integral.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 7: Herbolaria funcional y espagiria.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+          <!-- Módulo 8 -->
+          <div class="module-card bg-white/95 p-5 rounded-2xl border border-earth-200 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800">Módulo 08</span>
+                <i data-lucide="shield-check" class="w-4 h-4 text-purple-600"></i>
+              </div>
+              <h4 class="font-bold text-gray-900 text-base font-display leading-snug">
+                Probióticos
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Cepas específicas, recolonización inteligente de la flora intestinal, psicobióticos y modulación inmunológica.
+              </p>
+            </div>
+            <button onclick="openWhatsAppDirect('¡Hola! Me interesa información sobre el Módulo 8: Probióticos.')" class="text-xs font-bold text-earth-600 hover:text-earth-800 flex items-center gap-1 pt-2 border-t border-gray-100">
+              <span>Solicitar este módulo</span> &rarr;
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- SELECCIÓN DE PRODUCTO: PRECIOS Y PROMOCIONES DEL CURSO (PDF)          -->
+      <!-- ===================================================================== -->
+      <div class="bg-gradient-to-br from-earth-600 via-earth-500 to-earth-700 rounded-3xl p-8 sm:p-12 text-white shadow-2xl space-y-10">
+        
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-earth-100">Inscripciones & Modalidades de Pago</span>
+          <h3 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Selección de <span class="font-serif italic font-normal text-earth-100">Producto</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-earth-100">
+            Elige la modalidad que mejor se adapte a tu proceso de aprendizaje. Aceptamos tarjetas bancarias, American Express, transferencia y efectivo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 items-stretch">
+          
+          <!-- Paquete 1: Curso 8 Módulos (Destacado) -->
+          <div class="pricing-card bg-white text-gray-900 rounded-3xl p-7 shadow-xl border-4 border-honey-400 flex flex-col justify-between relative">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-honey-500 to-amber-600 text-white text-[11px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow">
+              Programa Completo &bull; -15% Efectivo/Transf.
+            </div>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xl font-extrabold font-display text-gray-900">Curso 8 Módulos</h4>
+                <span class="w-10 h-10 rounded-xl bg-earth-100 text-earth-700 flex items-center justify-center font-bold">
+                  <i data-lucide="award" class="w-5 h-5"></i>
+                </span>
+              </div>
+
+              <div class="pb-3 border-b border-gray-100">
+                <div class="text-3xl sm:text-4xl font-black text-earth-700">$8,000 <span class="text-sm font-semibold text-gray-500">MXN</span></div>
+                <p class="text-xs text-emerald-700 font-bold mt-1">
+                  ✨ $6,800 MXN pagando en transferencia o efectivo (-15%)
+                </p>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Acceso completo a los <strong>8 módulos oficiales</strong> del programa.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="credit-card" class="w-4 h-4 text-earth-600 shrink-0 mt-0.5"></i>
+                  <span><strong>3 y 6 MSI</strong> con cualquier tarjeta bancaria o American Express (Amex).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="percent" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                  <span><strong>-15% de descuento</strong> en pago con transferencia o efectivo.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-gray-100 space-y-2">
+              <button onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me interesa adquirir el *Curso Completo de 8 Módulos ($8,000 MXN)* “De la Alimentación a la Sanación”. ¿Me ayudan con los datos de inscripción?')" class="w-full py-3.5 px-4 bg-gradient-to-r from-earth-600 to-earth-700 hover:from-earth-700 hover:to-earth-800 text-white rounded-xl font-bold text-xs shadow-md transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Adquirir Curso de 8 Módulos</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Paquete 2: Curso 4 Módulos -->
+          <div class="pricing-card bg-white/95 text-gray-900 rounded-3xl p-7 shadow-lg border border-earth-200 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xl font-extrabold font-display text-gray-900">Curso 4 Módulos</h4>
+                <span class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </span>
+              </div>
+
+              <div class="pb-3 border-b border-gray-100">
+                <div class="text-3xl sm:text-4xl font-black text-gray-900">$4,000 <span class="text-sm font-semibold text-gray-500">MXN</span></div>
+                <p class="text-xs text-emerald-700 font-bold mt-1">
+                  ✨ $3,600 MXN pagando en transferencia o efectivo (-10%)
+                </p>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Acceso a <strong>4 módulos a elegir</strong> del programa oficial.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="credit-card" class="w-4 h-4 text-earth-600 shrink-0 mt-0.5"></i>
+                  <span><strong>3 y 6 MSI</strong> con cualquier tarjeta bancaria o American Express (Amex).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="percent" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                  <span><strong>-10% de descuento</strong> en pago con transferencia o efectivo.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-gray-100">
+              <button onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me interesa adquirir el paquete de *Curso 4 Módulos ($4,000 MXN)* “De la Alimentación a la Sanación”.')" class="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs shadow transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Adquirir Curso de 4 Módulos</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Paquete 3: Curso 1 Módulo -->
+          <div class="pricing-card bg-white/95 text-gray-900 rounded-3xl p-7 shadow-lg border border-earth-200 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xl font-extrabold font-display text-gray-900">Curso 1 Módulo</h4>
+                <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+                  <i data-lucide="book-open" class="w-5 h-5"></i>
+                </span>
+              </div>
+
+              <div class="pb-3 border-b border-gray-100">
+                <div class="text-3xl sm:text-4xl font-black text-gray-900">$920 <span class="text-sm font-semibold text-gray-500">MXN</span></div>
+                <p class="text-xs text-gray-500 font-medium mt-1">
+                  Modalidad por módulo individual
+                </p>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-gray-700">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>Acceso completo a <strong>1 módulo individual</strong> de tu elección.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="credit-card" class="w-4 h-4 text-earth-600 shrink-0 mt-0.5"></i>
+                  <span>Pago con <strong>cualquier tarjeta bancaria, Amex</strong>, transferencia o efectivo.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <span>Disponible durante la vigencia de tu suscripción en la web.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-gray-100">
+              <button onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me interesa adquirir *1 Módulo Individual ($920 MXN)* del curso “De la Alimentación a la Sanación”.')" class="w-full py-3.5 px-4 bg-gray-900 hover:bg-black text-white rounded-xl font-bold text-xs shadow transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Adquirir 1 Módulo ($920 MXN)</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CITA EDITORIAL DE PARACELSO (DEL PDF)                                     -->
+  <!-- ========================================================================= -->
+  <section class="py-14 bg-gradient-to-r from-earth-700 via-earth-600 to-earth-700 text-white relative z-10 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4 relative z-10">
+      <i data-lucide="quote" class="w-10 h-10 text-earth-200/50 mx-auto"></i>
+      <blockquote class="text-2xl sm:text-4xl font-serif italic leading-relaxed text-white">
+        «La diferencia entre veneno, alimento y medicina es la dosis»
+      </blockquote>
+      <p class="text-sm sm:text-base font-bold tracking-widest uppercase text-earth-200">
+        — Paracelso
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 2: SERVICIOS Y CONSULTAS DEL CONSULTORIO                          -->
+  <!-- ========================================================================= -->
+  <section id="servicios" class="py-16 bg-white border-b border-gray-100 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
         <span class="text-brand-600 text-xs font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
-          Atención del Consultorio
+          Atención Presencial en Polanco, CDMX
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 font-display">
-          Servicios y <span class="font-serif italic font-normal text-brand-600">Consultas</span>
+          Servicios y <span class="font-serif italic font-normal text-brand-600">Consultorio</span>
         </h2>
         <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-          Atención presencial en consultorio para valoración y orientación. Agenda tu cita directamente por WhatsApp para coordinar tu horario.
+          Valoración integral y acompañamiento personalizado en nuestro consultorio de Polanco, CDMX.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Tarjeta 1: Consultas en Consultorio -->
-        <div class="service-card bg-[#FAFBF9] rounded-3xl p-7 border-2 border-emerald-100/90 hover:border-emerald-300 transition flex flex-col justify-between shadow-xs">
+        <!-- Consultas -->
+        <div class="bg-[#FAFBF9] rounded-3xl p-7 border-2 border-emerald-100 hover:border-emerald-300 transition flex flex-col justify-between shadow-xs">
           <div class="space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-brand-200 text-emerald-800 flex items-center justify-center font-bold shadow-xs">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-brand-200 text-emerald-800 flex items-center justify-center font-bold">
               <i data-lucide="stethoscope" class="w-7 h-7"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 font-display">
-              Consultas en Consultorio
+              Consultas en Polanco, CDMX
             </h3>
             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Atención personalizada en nuestro consultorio para diagnóstico, valoración integral y seguimiento continuo de tu bienestar.
+              Atención personalizada en consultorio con enfoque integrativo para transformar tu salud desde la raíz.
             </p>
             <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200/70 text-xs text-emerald-900 font-medium">
-              <strong>Horarios de Consulta:</strong><br />
-              Lun a Vie 10:00 a 18:00 hrs | Sáb 10:00 a 14:00 hrs
+              <strong>Horarios:</strong> Lun a Vie 10:00 a 18:00 hrs | Sáb 10:00 a 14:00 hrs
             </div>
           </div>
           <div class="pt-6 mt-4 border-t border-gray-200">
-            <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio')" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
+            <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio Polanco')" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span>Agendar Consulta por WhatsApp</span>
             </a>
           </div>
         </div>
 
-        <!-- Tarjeta 2: Venta de Productos Naturales -->
-        <div class="service-card bg-[#FAFBF9] rounded-3xl p-7 border-2 border-amber-100/90 hover:border-amber-300 transition flex flex-col justify-between shadow-xs">
+        <!-- Botica Natural -->
+        <div class="bg-[#FAFBF9] rounded-3xl p-7 border-2 border-amber-100 hover:border-amber-300 transition flex flex-col justify-between shadow-xs">
           <div class="space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-honey-200 text-amber-800 flex items-center justify-center font-bold shadow-xs">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-honey-200 text-amber-800 flex items-center justify-center font-bold">
               <i data-lucide="package" class="w-7 h-7"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 font-display">
-              Venta de Productos Naturales
+              Botica Natural & Suplementos
             </h3>
             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Disponibilidad de formulaciones terapéuticas y botica en nuestro consultorio:
+              Formulaciones seleccionadas para nutrición celular y herbolaria funcional:
             </p>
             <ul class="space-y-2 text-xs text-gray-700">
-              <li class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <strong>Aminoácidos:</strong> Suplementación de alta pureza
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-teal-500"></span>
-                <strong>Extractos herbolarios:</strong> Tinturas estandarizadas
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                <strong>Miel orgánica:</strong> Pura de bosque y derivados apícolas
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                <strong>Flores de Bach:</strong> Fórmulas para equilibrio emocional
-              </li>
+              <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><strong>Aminoácidos esenciales</strong> y nutrición celular</li>
+              <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-teal-500"></span><strong>Extractos herbolarios</strong> funcionales y espagiria</li>
+              <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span><strong>Miel orgánica</strong> pura y derivados</li>
+              <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-purple-500"></span><strong>Flores de Bach</strong> y probióticos</li>
             </ul>
           </div>
           <div class="pt-6 mt-4 border-t border-gray-200">
-            <a href="#catalogo" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-black hover:to-gray-900 text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
+            <a href="#catalogo" class="w-full inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
               <i data-lucide="arrow-down" class="w-4 h-4 text-honey-400"></i>
-              <span>Explorar Catálogo de Botica</span>
+              <span>Ver Catálogo de Productos</span>
             </a>
           </div>
         </div>
 
-        <!-- Tarjeta 3: Cursos de Alimentación -->
-        <div class="service-card bg-[#FAFBF9] rounded-3xl p-7 border-2 border-sky-100/90 hover:border-sky-300 transition flex flex-col justify-between shadow-xs">
+        <!-- Educación / Cursos -->
+        <div class="bg-[#FAFBF9] rounded-3xl p-7 border-2 border-earth-200 hover:border-earth-400 transition flex flex-col justify-between shadow-xs">
           <div class="space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-200 text-sky-800 flex items-center justify-center font-bold shadow-xs">
-              <i data-lucide="book-open" class="w-7 h-7"></i>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-earth-100 to-earth-200 text-earth-800 flex items-center justify-center font-bold">
+              <i data-lucide="graduation-cap" class="w-7 h-7"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 font-display">
-              Cursos de Alimentación
+              Formación & Suscripción Online
             </h3>
             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Talleres y cursos enfocados en nutrición y alimentación consciente para transformar tus hábitos cotidianos y salud celular.
+              Curso Online <strong>“De la Alimentación a la Sanación”</strong> impartido por Jorge Reskala. Modalidades de 8 módulos, 4 módulos o 1 módulo.
             </p>
-            <div class="p-3 bg-sky-50 rounded-xl border border-sky-200/70 text-xs text-sky-900 font-medium">
-              Consulta por WhatsApp los temarios, fechas de inicio y modalidades disponibles.
+            <div class="p-3 bg-earth-50 rounded-xl border border-earth-200 text-xs text-earth-800 font-medium">
+              3 y 6 MSI con tarjetas bancarias y Amex, o hasta -15% en transferencia/efectivo.
             </div>
           </div>
           <div class="pt-6 mt-4 border-t border-gray-200">
-            <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola! Me gustaría pedir informes sobre los Cursos de Alimentación que tienen programados.')" class="w-full inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>Preguntar por Cursos</span>
+            <a href="#curso-online" class="w-full inline-flex items-center justify-center gap-2 bg-earth-600 hover:bg-earth-700 text-white py-3 px-4 rounded-xl font-bold text-xs transition shadow-sm">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>Ver Módulos y Costos</span>
             </a>
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- SECCIÓN 2: CATÁLOGO DE PRODUCTOS (35 PRODUCTOS CON COLORES VIVOS)         -->
+  <!-- SECCIÓN 3: CATÁLOGO DE PRODUCTOS (CON CURSOS REALES + ESPACIOS BOTICA)     -->
   <!-- ========================================================================= -->
   <section id="catalogo" class="py-16 bg-[#FAFBF9] relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Encabezado del Catálogo -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
         <div class="space-y-2 max-w-2xl">
           <span class="text-brand-600 text-xs font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
-            Catálogo Informativo & Botica
+            Catálogo FRK Integrativa
           </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 font-display">
-            Catálogo de <span class="font-serif italic font-normal text-brand-600">Productos</span>
+            Catálogo de <span class="font-serif italic font-normal text-brand-600">Productos y Cursos</span>
           </h2>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Explora los productos de botica y cursos disponibles en el consultorio. Puedes solicitar información o apartar tus productos directamente por <strong>WhatsApp</strong>.
+            Incluye los paquetes oficiales del Curso Online <em>“De la Alimentación a la Sanación”</em> y los espacios de botica para aminoácidos, extractos herbolarios, miel orgánica y flores de Bach.
           </p>
         </div>
 
-        <!-- Botón Ver Pedido -->
         <button onclick="toggleCartDrawer(true)" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-2xl font-bold text-xs shadow-md transition-all">
           <i data-lucide="shopping-cart" class="w-4 h-4"></i>
-          <span>Mi Pedido (<span id="cart-header-btn-count">0</span>)</span>
+          <span>Mi Lista (<span id="cart-header-btn-count">0</span>)</span>
         </button>
       </div>
 
-      <!-- Barra de Filtros y Buscador -->
+      <!-- Barra de Filtros -->
       <div class="bg-white p-4 sm:p-5 rounded-3xl shadow-sm border border-gray-200/90 mb-8 space-y-4">
-        
-        <!-- Buscador -->
         <div class="flex flex-col sm:flex-row gap-3">
           <div class="relative flex-1">
             <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
             <input 
               type="text" 
               id="search-input" 
-              placeholder="Buscar por categoría, número de producto o nombre..." 
+              placeholder="Buscar curso, módulo, aminoácido, extracto, miel..." 
               oninput="filterProducts()"
               class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
             />
@@ -624,16 +961,19 @@
 
           <div class="sm:w-48">
             <select id="sort-select" onchange="filterProducts()" class="w-full py-2.5 px-3 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 font-medium">
-              <option value="featured">Todos los productos</option>
+              <option value="featured">Orden del Catálogo</option>
               <option value="name">Alfabético</option>
             </select>
           </div>
         </div>
 
-        <!-- Pestañas de Categoría con Acentos de Color -->
+        <!-- Pestañas de Categoría -->
         <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar text-xs font-semibold">
           <button onclick="selectCategory('all', this)" class="category-tab active px-4 py-2 rounded-xl bg-brand-600 text-white shadow-xs whitespace-nowrap transition-all">
             Todos (35)
+          </button>
+          <button onclick="selectCategory('cursos', this)" class="category-tab px-4 py-2 rounded-xl bg-earth-100 hover:bg-earth-200 text-earth-900 border border-earth-300 whitespace-nowrap transition-all">
+            Cursos & Módulos Oficiales (5)
           </button>
           <button onclick="selectCategory('aminoacidos', this)" class="category-tab px-4 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 whitespace-nowrap transition-all">
             Aminoácidos (8)
@@ -647,33 +987,24 @@
           <button onclick="selectCategory('flores_bach', this)" class="category-tab px-4 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 whitespace-nowrap transition-all">
             Flores de Bach (6)
           </button>
-          <button onclick="selectCategory('cursos', this)" class="category-tab px-4 py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 whitespace-nowrap transition-all">
-            Cursos de Alimentación (5)
-          </button>
         </div>
-
       </div>
 
       <!-- Resumen de Conteo -->
       <div class="flex items-center justify-between text-xs text-gray-500 mb-6 px-1">
-        <div>Mostrando <strong id="products-count" class="text-gray-900 font-bold">35</strong> productos disponibles en catálogo</div>
-        <div class="text-emerald-700 font-semibold flex items-center gap-1">
-          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-          <span>Pedidos y consultas directas por WhatsApp</span>
-        </div>
+        <div>Mostrando <strong id="products-count" class="text-gray-900 font-bold">35</strong> ítems en el catálogo</div>
+        <div class="text-emerald-700 font-semibold">Pedidos y suscripciones vía WhatsApp</div>
       </div>
 
-      <!-- Grid de Productos (35 Cards estilizadas con colores específicos de categoría) -->
-      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <!-- Generado dinámicamente -->
-      </div>
+      <!-- Grid de Productos -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
 
       <!-- Estado Vacío -->
       <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-gray-200 p-8 space-y-3">
         <div class="w-14 h-14 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto">
           <i data-lucide="package-search" class="w-7 h-7"></i>
         </div>
-        <h3 class="text-base font-bold text-gray-800 font-display">No encontramos coincidencias con ese término</h3>
+        <h3 class="text-base font-bold text-gray-800 font-display">No encontramos coincidencias</h3>
         <button onclick="resetFilters()" class="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl text-xs font-semibold hover:bg-brand-700 transition">
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Restablecer Filtros
         </button>
@@ -683,143 +1014,146 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- SECCIÓN 3: CURSOS DE ALIMENTACIÓN                                         -->
+  <!-- SECCIÓN 4: CONTÁCTANOS — POLANCO CDMX, TELÉFONOS Y CORREO (DEL PDF)       -->
   <!-- ========================================================================= -->
-  <section id="cursos" class="py-16 bg-white border-y border-gray-100 relative z-10">
+  <section id="contacto" class="py-20 bg-[#F3E9D2]/55 border-t border-earth-200 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="bg-gradient-to-br from-brand-900 via-brand-800 to-emerald-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
-        <div class="max-w-3xl space-y-4 relative z-10">
-          <span class="inline-flex items-center gap-2 bg-brand-700/80 border border-brand-500/40 text-brand-200 text-xs px-3.5 py-1 rounded-full font-semibold">
-            <i data-lucide="graduation-cap" class="w-4 h-4 text-honey-400"></i>
-            Educación y Salud
-          </span>
-
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-display">
-            Cursos de <span class="font-serif italic font-normal text-honey-300">Alimentación Consciente</span>
-          </h2>
-
-          <p class="text-brand-100 text-sm sm:text-base leading-relaxed font-normal">
-            Aprende pautas y hábitos de nutrición terapéutica para el cuidado de tu salud. Para conocer los temarios, fechas de inicio y costos de los cursos disponibles, contáctanos por WhatsApp.
-          </p>
-
-          <div class="pt-3">
-            <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me gustaría solicitar información y fechas disponibles para los Cursos de Alimentación.')" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-honey-400 to-amber-500 hover:from-honey-500 hover:to-amber-600 text-gray-900 py-3.5 px-6 rounded-2xl font-bold text-sm shadow-lg transition transform hover:-translate-y-0.5">
-              <i data-lucide="message-circle" class="w-4 h-4 text-gray-900"></i>
-              <span>Consultar Cursos por WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- SECCIÓN 4: HORARIOS OFICIALES, CONSULTORIO Y GOOGLE MAPS                  -->
-  <!-- ========================================================================= -->
-  <section id="contacto" class="py-16 bg-[#FAFBF9] relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
-        <span class="text-brand-600 text-xs font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
-          Ubicación y Disponibilidad
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+        <span class="text-earth-700 text-xs font-bold tracking-widest uppercase bg-white px-3.5 py-1 rounded-full border border-earth-200">
+          FRK Integrativa &bull; Contáctanos
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 font-display">
-          Horarios de Atención y <span class="font-serif italic font-normal text-brand-600">Consultorio</span>
+          Consultorio en <span class="font-serif italic font-normal text-earth-600">Polanco, CDMX</span>
         </h2>
-        <p class="text-gray-600 text-sm leading-relaxed">
-          Visítanos en nuestro consultorio o contáctanos por WhatsApp para agendar tu cita previa.
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Comunícate con nosotros a través de nuestras líneas telefónicas oficiales, correo electrónico o WhatsApp para agendar tu consulta o adquirir tus productos.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Tarjetas de Horarios y Contacto (5 columnas) -->
+        <!-- Tarjetas de Datos Oficiales del PDF (5 columnas) -->
         <div class="lg:col-span-5 space-y-6">
           
-          <!-- Horarios Oficiales del Cliente -->
-          <div class="bg-white p-7 rounded-3xl border border-gray-200 shadow-sm space-y-5">
-            <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+          <!-- Datos de Contacto Oficiales (Polanco, Correo y 3 Teléfonos) -->
+          <div class="bg-white p-7 rounded-3xl border border-earth-200 shadow-md space-y-5">
+            <div class="flex items-center justify-between pb-4 border-b border-gray-100">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold">
-                  <i data-lucide="clock" class="w-6 h-6"></i>
+                <div class="w-11 h-11 rounded-2xl bg-earth-100 text-earth-700 flex items-center justify-center font-bold">
+                  <i data-lucide="building-2" class="w-6 h-6"></i>
                 </div>
                 <div>
-                  <h3 class="font-bold text-gray-900 text-base font-display">Horarios de Atención</h3>
-                  <p class="text-xs text-gray-500">Consultorio FRK Integrativa</p>
+                  <h3 class="font-bold text-gray-900 text-base font-display">Datos Oficiales de Contacto</h3>
+                  <p class="text-xs text-gray-500">FRK Integrativa — Jorge Reskala</p>
                 </div>
               </div>
-              <span id="schedule-card-badge" class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
-                Abierto Ahora
-              </span>
             </div>
 
-            <!-- Lista de Horarios -->
-            <div class="space-y-3 text-xs sm:text-sm">
-              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-gray-50 to-brand-50/40 border border-gray-200/80">
-                <span class="font-semibold text-gray-800">Lunes a Viernes</span>
-                <span class="font-bold text-brand-800">10:00 am – 6:00 pm</span>
+            <!-- Dirección Polanco CDMX -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
               </div>
-
-              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-gray-50 to-brand-50/40 border border-gray-200/80">
-                <span class="font-semibold text-gray-800">Sábados</span>
-                <span class="font-bold text-brand-800">10:00 am – 4:00 pm</span>
-              </div>
-
-              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-red-50/60 border border-red-100 text-xs">
-                <span class="font-semibold text-gray-800">Domingos</span>
-                <span class="font-bold text-red-600">Cerrado</span>
+              <div>
+                <span class="text-xs font-bold text-earth-700 uppercase tracking-wider block">Dirección</span>
+                <p class="text-sm font-bold text-gray-900">Polanco, CDMX</p>
+                <p class="text-xs text-gray-500">Ciudad de México (Consultorio de Medicina Integrativa)</p>
               </div>
             </div>
 
+            <!-- Correo Electrónico Oficial -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-earth-700 uppercase tracking-wider block">Correo electrónico</span>
+                <a href="mailto:rkintegrativa@gmail.com" class="text-sm font-bold text-brand-700 hover:underline">
+                  rkintegrativa@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Números Telefónicos del Consultorio -->
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+              </div>
+              <div class="space-y-1 flex-1">
+                <span class="text-xs font-bold text-earth-700 uppercase tracking-wider block">Números telefónicos</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1 text-xs font-bold text-gray-800">
+                  <a href="tel:5560783600" class="p-2 rounded-lg bg-gray-50 hover:bg-brand-50 border border-gray-200 flex items-center gap-1.5 transition">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600"></i> (55) 6078 3600
+                  </a>
+                  <a href="tel:5545366504" class="p-2 rounded-lg bg-gray-50 hover:bg-brand-50 border border-gray-200 flex items-center gap-1.5 transition">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600"></i> (55) 4536 6504
+                  </a>
+                  <a href="tel:5554666037" class="p-2 rounded-lg bg-gray-50 hover:bg-brand-50 border border-gray-200 flex items-center gap-1.5 transition sm:col-span-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600"></i> (55) 5466 6037
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botón Directo a WhatsApp -->
             <div class="pt-2">
-              <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Consultorio')" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-xl text-xs font-bold transition shadow-md">
+              <a href="javascript:void(0)" onclick="openWhatsAppForAppointment('Consulta en Polanco CDMX')" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 px-4 rounded-xl text-xs font-bold transition shadow-md">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
-                <span>Agendar Cita en WhatsApp: 55 7471 4726</span>
+                <span>WhatsApp Directo: 55 7471 4726</span>
               </a>
             </div>
           </div>
 
-          <!-- Tarjeta de Dirección -->
-          <div class="bg-white p-7 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-            <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2 font-display">
-              <i data-lucide="map-pin" class="w-4 h-4 text-brand-600"></i>
-              Dirección del Consultorio
-            </h4>
-            <p class="text-xs text-gray-600 leading-relaxed">
-              <strong>FRK Integrativa – Consultorio</strong><br />
-              Atención presencial en consultorio para consultas médicas y entrega de productos.<br />
-              (Punto interactivo integrado en Google Maps)
-            </p>
-
-            <div class="pt-2">
-              <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola! Me gustaría confirmar la dirección exacta para acudir a mi cita.')" class="inline-flex items-center gap-2 text-xs font-bold text-brand-700 hover:underline">
-                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
-                <span>Solicitar indicaciones de llegada por WhatsApp &rarr;</span>
-              </a>
+          <!-- Tarjeta de Horarios de Atención -->
+          <div class="bg-white p-6 rounded-3xl border border-earth-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2 font-display">
+                <i data-lucide="clock" class="w-4 h-4 text-brand-600"></i>
+                Horarios de Consultorio
+              </h4>
+              <span id="schedule-card-badge" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                Abierto
+              </span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between p-2.5 rounded-xl bg-gray-50 border border-gray-100">
+                <span class="font-semibold text-gray-700">Lunes a Viernes:</span>
+                <strong class="text-gray-900">10:00 am – 6:00 pm</strong>
+              </div>
+              <div class="flex justify-between p-2.5 rounded-xl bg-gray-50 border border-gray-100">
+                <span class="font-semibold text-gray-700">Sábados:</span>
+                <strong class="text-gray-900">10:00 am – 4:00 pm</strong>
+              </div>
+              <div class="flex justify-between p-2.5 rounded-xl bg-red-50/50 border border-red-100">
+                <span class="font-semibold text-gray-700">Domingos:</span>
+                <strong class="text-red-600">Cerrado</strong>
+              </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Google Maps Integrado (7 columnas) -->
-        <div class="lg:col-span-7 bg-white p-4 sm:p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
+        <!-- Mapa de Google Maps centrado en Polanco, CDMX (7 columnas) -->
+        <div class="lg:col-span-7 bg-white p-4 sm:p-5 rounded-3xl border border-earth-200 shadow-md space-y-3">
           <div class="flex items-center justify-between pb-1 px-1">
-            <h3 class="font-bold text-gray-900 text-sm font-display">Mapa del Consultorio</h3>
-            <span class="text-xs text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full font-semibold border border-emerald-200">Google Maps Activo</span>
+            <div>
+              <h3 class="font-bold text-gray-900 text-base font-display">Ubicación en Polanco, CDMX</h3>
+              <p class="text-xs text-gray-500">Mapa interactivo de la zona del consultorio</p>
+            </div>
+            <span class="text-xs text-earth-800 bg-earth-100 px-3 py-1 rounded-full font-bold border border-earth-200">Polanco, Ciudad de México</span>
           </div>
 
-          <div class="relative w-full h-[390px] rounded-2xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
+          <div class="relative w-full h-[430px] rounded-2xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6615598687774!2d-99.16781262402127!3d19.42702064086431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20Angel%20de%20la%20Independencia!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15050.251931120185!2d-99.20073355!3d19.4312974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d202010c66c8fd%3A0x1d1c84805f04f766!2sPolanco%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
               width="100%" 
               height="100%" 
               style="border:0;" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade"
-              title="Ubicación Consultorio FRK Integrativa">
+              title="Ubicación Consultorio FRK Integrativa Polanco CDMX">
             </iframe>
           </div>
         </div>
@@ -830,12 +1164,12 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PIE DE PÁGINA (FOOTER)                                                   -->
+  <!-- PIE DE PÁGINA (FOOTER CON TODOS LOS DATOS OFICIALES)                      -->
   <!-- ========================================================================= -->
   <footer class="bg-gradient-to-b from-brand-900 to-gray-950 text-white pt-14 pb-10 border-t border-brand-800 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-brand-800/70">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-brand-800/70">
         
         <!-- Columna 1: Marca -->
         <div class="space-y-3">
@@ -843,34 +1177,47 @@
             <img src="assets/logo.png" alt="FRK Integrativa" class="h-9 w-auto object-contain brightness-0 invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
             <div style="display:none;" class="text-xl font-bold tracking-tight font-display">FRK <span class="text-brand-400">INTEGRATIVA</span></div>
           </div>
-          <p class="text-xs text-brand-200 leading-relaxed font-light">
-            Consultorio médico integrativo, venta de aminoácidos, extractos herbolarios, miel orgánica pura, flores de bach y cursos de alimentación consciente.
+          <p class="text-xs text-brand-200 leading-relaxed">
+            <strong>Jorge Reskala</strong> — Un enfoque integrativo para transformar tu salud desde la raíz. Consultorio en Polanco CDMX, Botica Natural y Curso Online.
           </p>
         </div>
 
-        <!-- Columna 2: Horarios -->
+        <!-- Columna 2: Curso 8 Módulos -->
         <div class="space-y-2 text-xs">
-          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Horarios Oficiales</h4>
-          <p class="text-brand-200">Lunes a Viernes: <strong>10:00 am a 6:00 pm</strong></p>
-          <p class="text-brand-200">Sábados: <strong>10:00 am a 4:00 pm</strong></p>
-          <p class="text-brand-400">Domingos: Cerrado</p>
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Curso “De la Alimentación a la Sanación”</h4>
+          <p class="text-brand-200">• Curso 8 Módulos: <strong>$8,000 MXN</strong> (-15% transf.)</p>
+          <p class="text-brand-200">• Curso 4 Módulos: <strong>$4,000 MXN</strong> (-10% transf.)</p>
+          <p class="text-brand-200">• Curso 1 Módulo: <strong>$920 MXN</strong></p>
         </div>
 
-        <!-- Columna 3: WhatsApp Directo -->
-        <div class="space-y-2">
-          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Contacto Directo</h4>
-          <p class="text-xs text-brand-200">Citas y pedidos por WhatsApp:</p>
-          <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola! Me comunico desde la página de FRK Integrativa.')" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>55 7471 4726</span>
-          </a>
+        <!-- Columna 3: Horarios y Dirección -->
+        <div class="space-y-2 text-xs">
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Ubicación y Horarios</h4>
+          <p class="text-brand-200">📍 <strong>Polanco, CDMX</strong></p>
+          <p class="text-brand-200">Lun a Vie: 10:00 am – 6:00 pm</p>
+          <p class="text-brand-200">Sábados: 10:00 am – 4:00 pm</p>
+          <p class="text-brand-200">✉️ rkintegrativa@gmail.com</p>
+        </div>
+
+        <!-- Columna 4: Teléfonos y WhatsApp -->
+        <div class="space-y-2 text-xs">
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Números Telefónicos</h4>
+          <p class="text-brand-200">📞 (55) 6078 3600</p>
+          <p class="text-brand-200">📞 (55) 4536 6504</p>
+          <p class="text-brand-200">📞 (55) 5466 6037</p>
+          <div class="pt-2">
+            <a href="javascript:void(0)" onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me comunico desde la página web.')" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow transition">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WA: 55 7471 4726</span>
+            </a>
+          </div>
         </div>
 
       </div>
 
       <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-300">
-        <div>&copy; <span id="current-year">2026</span> FRK Integrativa. Todos los derechos reservados.</div>
-        <div class="text-[11px] text-brand-400">Consultorio & Botica Natural</div>
+        <div>&copy; <span id="current-year">2026</span> FRK Integrativa &bull; Jorge Reskala. Todos los derechos reservados.</div>
+        <div class="text-[11px] text-brand-400">«La diferencia entre veneno, alimento y medicina es la dosis» — Paracelso</div>
       </div>
 
     </div>
@@ -888,9 +1235,9 @@
             Categoría
           </span>
           <h3 id="modal-title" class="text-xl font-bold text-gray-900 leading-snug font-display">
-            Producto en Catálogo
+            Producto
           </h3>
-          <p id="modal-presentation" class="text-xs text-gray-500 font-medium">Presentación en consultorio</p>
+          <p id="modal-presentation" class="text-xs text-gray-500 font-medium">Presentación</p>
         </div>
         <button onclick="closeProductModal()" class="p-2 text-gray-400 hover:text-gray-700 rounded-full hover:bg-gray-100 transition">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -900,22 +1247,17 @@
       <div class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
         <div class="flex items-center justify-between bg-gradient-to-r from-brand-50/70 to-emerald-50/70 p-4 rounded-2xl border border-brand-100">
           <div>
-            <span class="text-[11px] text-gray-500 font-medium">Precio público:</span>
-            <div id="modal-price" class="text-lg font-bold text-brand-800">Por confirmar en consultorio</div>
+            <span class="text-[11px] text-gray-500 font-medium">Precio / Inversión:</span>
+            <div id="modal-price" class="text-lg font-bold text-brand-800">Por confirmar</div>
           </div>
           <span class="text-xs font-semibold text-emerald-800 bg-white px-3 py-1 rounded-xl border border-emerald-200 shadow-xs">
-            Disponible en Consultorio
+            FRK Integrativa
           </span>
         </div>
 
         <div>
-          <h4 class="font-bold text-gray-900 text-xs uppercase tracking-wider mb-1.5 text-brand-800 font-display">Información del Producto</h4>
+          <h4 class="font-bold text-gray-900 text-xs uppercase tracking-wider mb-1.5 text-brand-800 font-display">Descripción</h4>
           <p id="modal-description" class="text-gray-600 leading-relaxed text-xs"></p>
-        </div>
-
-        <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 text-xs text-gray-700 space-y-1">
-          <strong>¿Deseas más información o realizar un pedido?</strong>
-          <p class="text-[11px] text-gray-600">Puedes consultarnos directamente por WhatsApp indicando el nombre o categoría del producto.</p>
         </div>
       </div>
 
@@ -926,7 +1268,7 @@
         </button>
         <button id="modal-buy-wa-btn" class="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold text-xs shadow transition">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Consultar por WhatsApp</span>
+          <span>Solicitar por WhatsApp</span>
         </button>
       </div>
 
@@ -934,7 +1276,7 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- DRAWER LATERAL: MI PEDIDO / LISTA PARA WHATSAPP                           -->
+  <!-- DRAWER LATERAL: MI LISTA PARA WHATSAPP                                    -->
   <!-- ========================================================================= -->
   <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
     <div onclick="toggleCartDrawer(false)" class="drawer-overlay fixed inset-0"></div>
@@ -946,8 +1288,8 @@
             <i data-lucide="shopping-bag" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-bold text-gray-900 text-sm font-display">Mi Lista de Productos</h3>
-            <p class="text-xs text-gray-500">Enviar consulta directo a WhatsApp</p>
+            <h3 class="font-bold text-gray-900 text-sm font-display">Mi Lista de Selección</h3>
+            <p class="text-xs text-gray-500">Enviar pedido o inscripción a WhatsApp</p>
           </div>
         </div>
         <button onclick="toggleCartDrawer(false)" class="p-2 text-gray-400 hover:text-gray-700 rounded-full hover:bg-gray-100 transition">
@@ -960,49 +1302,114 @@
       <div class="p-5 border-t border-gray-100 bg-[#FAFBF9] space-y-3">
         <button id="send-cart-whatsapp-btn" onclick="sendFullCartToWhatsApp()" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 px-4 rounded-xl font-bold text-xs shadow-md transition">
           <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Enviar Lista de Consulta a WhatsApp</span>
+          <span>Enviar Lista a WhatsApp</span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP (55 7471 4726)                      -->
+  <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP                                     -->
   <!-- ========================================================================= -->
   <div class="fixed bottom-6 right-6 z-40">
-    <button onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me gustaría agendar una cita o consultar productos del consultorio.')" class="whatsapp-pulse flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-brand-600 hover:from-emerald-700 hover:to-brand-700 text-white px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105" title="WhatsApp Oficial: 55 7471 4726">
+    <button onclick="openWhatsAppDirect('¡Hola FRK Integrativa! Me gustaría agendar una cita en Polanco o pedir informes sobre el Curso Online de Jorge Reskala.')" class="whatsapp-pulse flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-brand-600 hover:from-emerald-700 hover:to-brand-700 text-white px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105" title="WhatsApp Oficial: 55 7471 4726">
       <i data-lucide="message-circle" class="w-6 h-6"></i>
       <span class="text-xs font-bold hidden sm:inline">WhatsApp: 55 7471 4726</span>
     </button>
   </div>
 
-  <!-- Toast de Notificación -->
+  <!-- Toast -->
   <div id="toast" class="fixed bottom-6 left-6 z-50 hidden bg-gray-900/95 backdrop-blur-md text-white px-4 py-2.5 rounded-xl shadow-xl text-xs font-medium items-center gap-2 border border-gray-700 transition-all">
     <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
     <span id="toast-message">Producto agregado</span>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- SCRIPTS Y GENERACIÓN DE LOS 35 PRODUCTOS CON COLORES ESPECÍFICOS          -->
+  <!-- SCRIPTS Y BASE DE DATOS DEL CATÁLOGO                                      -->
   <!-- ========================================================================= -->
   <script>
     const CLINIC_PHONE = "525574714726";
 
-    // Base de datos de 35 productos con estilos cromáticos únicos por categoría
     const PRODUCTS = [];
     let idCounter = 1;
 
-    // 1. Aminoácidos (8 productos) - Verde Esmeralda / Bio
+    // 1. Cursos Oficiales del PDF (5 paquetes / modalidades reales)
+    const officialCourses = [
+      {
+        name: "Curso Completo 8 Módulos: “De la Alimentación a la Sanación”",
+        priceLabel: "$8,000 MXN (-15% transf/efectivo)",
+        presentation: "Suscripción completa • 3 y 6 MSI tarjetas o Amex",
+        tag: "Programa Oficial",
+        shortDesc: "Los 8 módulos impartidos por Jorge Reskala: microbiota, lácteos, pH celular, detox, aminoácidos, herbolaria y probióticos.",
+        description: "Curso Online completo de 8 módulos con Jorge Reskala. Pago a 3 y 6 MSI con cualquier tarjeta bancaria o Amex, o 15% de descuento en transferencia o efectivo ($6,800 MXN)."
+      },
+      {
+        name: "Curso 4 Módulos: “De la Alimentación a la Sanación”",
+        priceLabel: "$4,000 MXN (-10% transf/efectivo)",
+        presentation: "Suscripción 4 módulos • 3 y 6 MSI tarjetas o Amex",
+        tag: "Paquete Intermedio",
+        shortDesc: "Selecciona 4 módulos estratégicos del curso de Jorge Reskala para transformar tu salud desde la raíz.",
+        description: "Modalidad de 4 módulos del Curso Online “De la Alimentación a la Sanación”. Acepta 3 y 6 MSI con cualquier tarjeta bancaria o Amex, o 10% de descuento en transferencia o efectivo ($3,600 MXN)."
+      },
+      {
+        name: "Curso 1 Módulo Individual: “De la Alimentación a la Sanación”",
+        priceLabel: "$920 MXN",
+        presentation: "Acceso a 1 módulo a elegir • Tarjetas, Amex o Transf.",
+        tag: "Módulo Individual",
+        shortDesc: "Adquiere un módulo individual a tu elección (Microbiota, Aminoácidos, Herbolaria y Espagiria, Agua y pH, etc.).",
+        description: "Acceso por suscripción a 1 módulo específico del programa de Jorge Reskala. Pago con cualquier tarjeta bancaria, Amex, transferencia o efectivo."
+      },
+      {
+        name: "Bloque Especializado: Microbiota, Lácteos & Probióticos",
+        priceLabel: "Incluido en modalidades del curso",
+        presentation: "Módulos 2, 3 y 8 • Curso Online FRK",
+        tag: "Salud Digestiva",
+        shortDesc: "Enfoque profundo en intestino, enfermedad crónica, moco, citoquinas y regeneración con probióticos.",
+        description: "Módulos enfocados en la raíz digestiva e inmunológica impartidos por Jorge Reskala en el curso De la Alimentación a la Sanación."
+      },
+      {
+        name: "Bloque Especializado: Aminoácidos, Agua Celular & Herbolaria",
+        priceLabel: "Incluido en modalidades del curso",
+        presentation: "Módulos 4, 6 y 7 • Curso Online FRK",
+        tag: "Nutrición & Espagiria",
+        shortDesc: "Agua, sales, pH, energía celular, aminoácidos esenciales, herbolaria funcional y espagiria.",
+        description: "Módulos dedicados a la bioquímica celular, suplementación con aminoácidos y medicina fitoterapéutica espagírica."
+      }
+    ];
+
+    officialCourses.forEach(c => {
+      PRODUCTS.push({
+        id: idCounter++,
+        name: c.name,
+        category: "cursos",
+        categoryLabel: "Curso Online • Jorge Reskala",
+        priceText: c.priceLabel,
+        presentation: c.presentation,
+        tag: c.tag,
+        shortDesc: c.shortDesc,
+        description: c.description,
+        iconName: "graduation-cap",
+        colorTheme: {
+          badge: "bg-earth-100 text-earth-800 border border-earth-300",
+          cardBorder: "hover:border-earth-500",
+          iconColor: "text-earth-700 bg-earth-50",
+          tagColor: "text-earth-700"
+        }
+      });
+    });
+
+    // 2. Aminoácidos Esenciales y Nutrición Celular (8 espacios)
     for (let i = 1; i <= 8; i++) {
       PRODUCTS.push({
         id: idCounter++,
         name: `Aminoácido #${i} – Por especificar`,
         category: "aminoacidos",
-        categoryLabel: "Aminoácidos",
+        categoryLabel: "Aminoácidos & Nutrición Celular",
+        priceText: "Por confirmar",
         presentation: "Presentación en frasco o cápsulas",
         tag: `Catálogo #${i}`,
-        shortDesc: "Producto de suplementación celular y balance ortomolecular formulado para tu salud.",
-        description: `Producto #${i} perteneciente a la sección de Aminoácidos y Nutrición Celular. Consulta en consultorio o por WhatsApp la disponibilidad de formulaciones y especificaciones.`,
+        shortDesc: "Fórmula de aminoácidos esenciales y nutrición celular disponible en consultorio.",
+        description: `Producto #${i} de la línea de Aminoácidos Esenciales y Nutrición Celular de FRK Integrativa. Solicita disponibilidad y gramaje en consultorio Polanco o vía WhatsApp.`,
         iconName: "dna",
         colorTheme: {
           badge: "bg-emerald-100 text-emerald-800 border border-emerald-200",
@@ -1013,17 +1420,18 @@
       });
     }
 
-    // 2. Extractos Herbolarios (10 productos) - Verde Eucalipto / Teal
+    // 3. Herbolaria Funcional y Extractos (10 espacios)
     for (let i = 1; i <= 10; i++) {
       PRODUCTS.push({
         id: idCounter++,
         name: `Extracto Herbolario #${i} – Por especificar`,
         category: "extractos",
-        categoryLabel: "Extractos Herbolarios",
-        presentation: "Frasco gotero / Tintura madre",
+        categoryLabel: "Herbolaria Funcional & Espagiria",
+        priceText: "Por confirmar",
+        presentation: "Frasco gotero / Extracto",
         tag: `Catálogo #${i}`,
-        shortDesc: "Extracto botánico concentrado para apoyo terapéutico y depuración natural.",
-        description: `Producto #${i} de la línea de Extractos Herbolarios y Fitoterapia. Formulación botánica elaborada con plantas seleccionadas para el cuidado de tu organismo.`,
+        shortDesc: "Extracto botánico de herbolaria funcional y espagiria para apoyo integral.",
+        description: `Producto #${i} de la línea de Herbolaria Funcional y Espagiria de FRK Integrativa. Elaborado bajo criterios de pureza y biodisponibilidad.`,
         iconName: "leaf",
         colorTheme: {
           badge: "bg-teal-100 text-teal-800 border border-teal-200",
@@ -1034,17 +1442,18 @@
       });
     }
 
-    // 3. Miel Orgánica (6 productos) - Ámbar / Miel Cálida
+    // 4. Miel Orgánica (6 espacios)
     for (let i = 1; i <= 6; i++) {
       PRODUCTS.push({
         id: idCounter++,
         name: `Miel Orgánica / Derivado #${i} – Por especificar`,
         category: "miel",
         categoryLabel: "Miel Orgánica",
-        presentation: "Tarro o frasco de vidrio",
+        priceText: "Por confirmar",
+        presentation: "Tarro de vidrio",
         tag: `Catálogo #${i}`,
-        shortDesc: "Miel pura sin calentar ni pasteurizar, polen, propóleo o derivados apícolas terapéuticos.",
-        description: `Producto #${i} de la categoría de Miel Orgánica y Apicultura Natural. Cosecha artesanal con enzimas vivas y propiedades reconstituyentes.`,
+        shortDesc: "Miel orgánica pura y derivados apícolas ricos en enzimas vivas.",
+        description: `Producto #${i} de la sección de Miel Orgánica y Apicultura Natural en FRK Integrativa.`,
         iconName: "droplet",
         colorTheme: {
           badge: "bg-amber-100 text-amber-800 border border-amber-200",
@@ -1055,17 +1464,18 @@
       });
     }
 
-    // 4. Flores de Bach (6 productos) - Violeta / Floral
+    // 5. Flores de Bach (6 espacios)
     for (let i = 1; i <= 6; i++) {
       PRODUCTS.push({
         id: idCounter++,
         name: `Flor de Bach #${i} – Por especificar`,
         category: "flores_bach",
         categoryLabel: "Flores de Bach",
+        priceText: "Por confirmar",
         presentation: "Frasco gotero 30ml",
         tag: `Catálogo #${i}`,
-        shortDesc: "Esencia floral para la atención de estados de estrés, ansiedad y equilibrio emocional.",
-        description: `Producto #${i} de la sección de Flores de Bach y Terapia Floral. Fórmulas preparadas para acompañar tus procesos emocionales y restablecer la calma.`,
+        shortDesc: "Esencia floral para acompañamiento emocional y manejo del estrés.",
+        description: `Producto #${i} de la línea de Flores de Bach en el consultorio FRK Integrativa Polanco.`,
         iconName: "flower-2",
         colorTheme: {
           badge: "bg-purple-100 text-purple-800 border border-purple-200",
@@ -1076,28 +1486,7 @@
       });
     }
 
-    // 5. Cursos de Alimentación (5 productos) - Azul / Celeste
-    for (let i = 1; i <= 5; i++) {
-      PRODUCTS.push({
-        id: idCounter++,
-        name: `Curso de Alimentación #${i} – Por especificar`,
-        category: "cursos",
-        categoryLabel: "Cursos de Alimentación",
-        presentation: "Modalidad y temario en consultorio",
-        tag: `Curso #${i}`,
-        shortDesc: "Taller educativo de nutrición consciente, recetas y hábitos para tu salud.",
-        description: `Curso #${i} del programa de educación en alimentación consciente. Contenidos orientados a transformar la nutrición y entender la función de los alimentos en tu cuerpo.`,
-        iconName: "book-open",
-        colorTheme: {
-          badge: "bg-sky-100 text-sky-800 border border-sky-200",
-          cardBorder: "hover:border-sky-400",
-          iconColor: "text-sky-700 bg-sky-50",
-          tagColor: "text-sky-800"
-        }
-      });
-    }
-
-    // Carrito
+    // Carrito / Lista
     let cart = [];
 
     function saveCart() {
@@ -1117,6 +1506,7 @@
           id: product.id,
           name: product.name,
           categoryLabel: product.categoryLabel,
+          priceText: product.priceText,
           quantity: 1
         });
       }
@@ -1145,7 +1535,7 @@
               <i data-lucide="shopping-bag" class="w-6 h-6"></i>
             </div>
             <h4 class="text-xs font-bold text-gray-700 font-display">Tu lista está vacía</h4>
-            <p class="text-[11px] text-gray-500">Agrega productos del catálogo para enviar tu consulta por WhatsApp.</p>
+            <p class="text-[11px] text-gray-500">Agrega cursos o productos de la botica para enviar tu solicitud por WhatsApp.</p>
           </div>
         `;
         document.getElementById("send-cart-whatsapp-btn").disabled = true;
@@ -1159,7 +1549,7 @@
             <div>
               <span class="text-[10px] font-bold text-brand-700 uppercase block">${item.categoryLabel}</span>
               <strong class="text-gray-900">${item.name}</strong>
-              <div class="text-gray-500 text-[11px]">Cantidad: ${item.quantity}</div>
+              <div class="text-earth-700 font-semibold text-[11px]">${item.priceText} &bull; Cant: ${item.quantity}</div>
             </div>
             <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-500 p-1" title="Eliminar">
               <i data-lucide="trash-2" class="w-4 h-4"></i>
@@ -1182,7 +1572,6 @@
       }
     }
 
-    // Funciones WhatsApp
     function openWhatsAppDirect(message) {
       const encoded = encodeURIComponent(message);
       const url = `https://wa.me/${CLINIC_PHONE}?text=${encoded}`;
@@ -1190,7 +1579,7 @@
     }
 
     function openWhatsAppForAppointment(serviceName) {
-      const msg = `¡Hola FRK Integrativa! Me gustaría agendar una cita para *${serviceName}* en su consultorio. ¿Podrían informarme qué horarios tienen disponibles?`;
+      const msg = `¡Hola FRK Integrativa! Me gustaría agendar una cita para *${serviceName}* en su consultorio de Polanco, CDMX. ¿Qué horarios tienen disponibles?`;
       openWhatsAppDirect(msg);
     }
 
@@ -1199,23 +1588,22 @@
       const prod = PRODUCTS.find(p => p.id === productId);
       if (!prod) return;
 
-      const msg = `¡Hola FRK Integrativa! Me interesa consultar información sobre el producto de la categoría *${prod.categoryLabel}* (${prod.name}). ¿Tienen disponibilidad en el consultorio?`;
+      const msg = `¡Hola FRK Integrativa! Me interesa solicitar información sobre: *${prod.name}* (${prod.priceText}).`;
       openWhatsAppDirect(msg);
     }
 
     function sendFullCartToWhatsApp() {
       if (cart.length === 0) return;
 
-      let text = `¡Hola FRK Integrativa! Deseo consultar información sobre los siguientes productos de su botica:\n\n`;
+      let text = `¡Hola FRK Integrativa! Me interesa solicitar los siguientes productos / cursos de su página web:\n\n`;
       cart.forEach((item, index) => {
-        text += `${index + 1}. *${item.name}* (${item.categoryLabel}) - Cantidad: ${item.quantity}\n`;
+        text += `${index + 1}. *${item.name}* (${item.priceText}) - Cantidad: ${item.quantity}\n`;
       });
-      text += `\n¿Podrían informarme sobre disponibilidad y costos en consultorio? ¡Muchas gracias!`;
+      text += `\n¿Podrían apoyarme con los detalles de pago e inscripción? ¡Muchas gracias!`;
 
       openWhatsAppDirect(text);
     }
 
-    // Render del Catálogo con acentos de color
     let activeCategory = "all";
 
     function renderProducts(list) {
@@ -1261,21 +1649,21 @@
 
           <div class="pt-4 mt-4 border-t border-gray-100 space-y-3">
             <div class="flex items-center justify-between text-xs">
-              <span class="text-gray-400 text-[11px]">Precio: <strong class="text-gray-700">Por confirmar</strong></span>
+              <span class="text-gray-500 text-[11px]">Inversión: <strong class="text-gray-900">${prod.priceText}</strong></span>
               <button onclick="openProductModal(${prod.id}); event.stopPropagation();" class="text-[11px] text-brand-700 font-bold hover:underline">
-                Detalles &rarr;
+                Ver más &rarr;
               </button>
             </div>
 
             <div class="grid grid-cols-2 gap-2">
-              <button onclick="addToCart(${prod.id}, event)" class="inline-flex items-center justify-center gap-1.5 bg-brand-50 hover:bg-brand-100 text-brand-800 py-2 px-2.5 rounded-xl font-bold text-xs transition border border-brand-200/70" title="Agregar a mi lista">
+              <button onclick="addToCart(${prod.id}, event)" class="inline-flex items-center justify-center gap-1.5 bg-brand-50 hover:bg-brand-100 text-brand-800 py-2 px-2.5 rounded-xl font-bold text-xs transition border border-brand-200/70">
                 <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                 <span>Agregar</span>
               </button>
               
-              <button onclick="askProductWhatsApp(${prod.id}, event)" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-2.5 rounded-xl font-bold text-xs transition shadow-xs" title="Consultar por WhatsApp">
+              <button onclick="askProductWhatsApp(${prod.id}, event)" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-2.5 rounded-xl font-bold text-xs transition shadow-xs">
                 <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                <span>Consultar</span>
+                <span>Solicitar</span>
               </button>
             </div>
           </div>
@@ -1336,7 +1724,6 @@
       if (firstTab) selectCategory("all", firstTab);
     }
 
-    // Modal de Detalle
     function openProductModal(productId) {
       const prod = PRODUCTS.find(p => p.id === productId);
       if (!prod) return;
@@ -1344,7 +1731,7 @@
       document.getElementById("modal-category").textContent = prod.categoryLabel;
       document.getElementById("modal-title").textContent = prod.name;
       document.getElementById("modal-presentation").textContent = prod.presentation;
-      document.getElementById("modal-price").textContent = "Por confirmar en consultorio";
+      document.getElementById("modal-price").textContent = prod.priceText;
       document.getElementById("modal-description").textContent = prod.description;
 
       document.getElementById("modal-add-cart-btn").onclick = () => {
@@ -1372,7 +1759,6 @@
       document.body.classList.remove("overflow-hidden");
     }
 
-    // Horario en Tiempo Real
     function checkClinicLiveStatus() {
       const now = new Date();
       const day = now.getDay();
